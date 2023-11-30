@@ -4,7 +4,7 @@ class Megaphone {
 private:
     char **messages;
 
-    char *_toUpper(char *message);
+    std::string _toUpper(char *message);
 
 public:
     Megaphone(char **message);
@@ -16,15 +16,14 @@ Megaphone::Megaphone(char **messages) {
     this->messages = messages;
 }
 
-char *Megaphone::_toUpper(char *message) {
+std::string Megaphone::_toUpper(char *message) {
+    std::string str;
     int i = 0;
     while (message[i]) {
-        if ('a' <= message[i] && message[i] <= 'z') {
-            message[i] += 'A' - 'a';
-        }
+        str.append(1, (char) std::toupper(message[i]));
         i++;
     }
-    return message;
+    return str;
 }
 
 void Megaphone::printMessage() {
