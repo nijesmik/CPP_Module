@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include "Contact.h"
@@ -14,6 +15,8 @@ private:
 	void add();
 
 	void search();
+
+	bool validate(std::string input);
 
 public:
 	PhoneBook();

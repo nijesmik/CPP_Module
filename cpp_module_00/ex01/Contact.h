@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Contact {
 private:
@@ -12,14 +13,16 @@ private:
 	std::string phoneNumber;
 	std::string darkestSecret;
 
-	std::string mapIdxToData(int idx);
+	std::string mapToData(int index);
+
+	std::string getData(std::string data);
 
 public:
 	Contact *next;
 
 	Contact();
 
-	void show(int index);
+	void show(int index, std::string delimiter);
 };
 
 #endif //CONTACT_H
