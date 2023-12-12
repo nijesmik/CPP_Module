@@ -1,5 +1,5 @@
-CXX = clang++
-CXXFLAGS = -Wall -Werror -Wextra
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = phonebook
 
