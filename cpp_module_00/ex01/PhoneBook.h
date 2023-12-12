@@ -6,17 +6,24 @@
 #include <string>
 #include "Contact.h"
 
+#define DELIMITER " | "
+
 class PhoneBook {
 private:
-	Contact *firstContact;
-	Contact *lastContact;
 	int count;
+	Contact contacts[8];
 
 	void add();
 
 	void search();
 
-	bool validate(std::string input);
+	bool validateIndexInput(std::string input);
+
+	bool validateInput(std::string input);
+
+	void showColumn();
+
+	std::string getline();
 
 public:
 	PhoneBook();

@@ -7,7 +7,7 @@
 
 class Contact {
 private:
-	std::string fisrtName;
+	std::string firstName;
 	std::string lastName;
 	std::string nickname;
 	std::string phoneNumber;
@@ -18,9 +18,9 @@ private:
 	std::string getData(std::string data);
 
 public:
-	Contact *next;
-
 	Contact();
+
+	Contact(std::string input[5]);
 
 	void show(int index, std::string delimiter);
 };

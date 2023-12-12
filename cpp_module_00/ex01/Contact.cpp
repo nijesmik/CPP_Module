@@ -1,22 +1,13 @@
 #include "Contact.h"
 
-Contact::Contact() {
-	std::cout << "Enter a first name : ";
-	std::getline(std::cin, fisrtName);
+Contact::Contact() {}
 
-	std::cout << "Enter a last name : ";
-	std::getline(std::cin, lastName);
-
-	std::cout << "Enter a nickname : ";
-	std::getline(std::cin, nickname);
-
-	std::cout << "Enter a phone number : ";
-	std::getline(std::cin, phoneNumber);
-
-	std::cout << "Enter a darkest secret : ";
-	std::getline(std::cin, darkestSecret);
-
-	next = NULL;
+Contact::Contact(std::string input[5]) {
+	firstName = input[0];
+	lastName = input[1];
+	nickname = input[2];
+	phoneNumber = input[3];
+	darkestSecret = input[4];
 }
 
 std::string Contact::getData(std::string data) {
@@ -28,7 +19,7 @@ std::string Contact::getData(std::string data) {
 
 std::string Contact::mapToData(int index) {
 	if (index == 0) {
-		return getData(fisrtName);
+		return getData(firstName);
 	}
 	if (index == 1) {
 		return getData(lastName);
