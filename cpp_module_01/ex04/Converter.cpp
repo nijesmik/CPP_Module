@@ -16,10 +16,14 @@ void Converter::convert(std::string fileName, std::string s1, std::string s2) {
 	while (std::getline(input, line)) {
 		size_t pos = line.find(s1);
 		while (pos != std::string::npos) {
-			line.replace(pos, s1.length(), s2);
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
 			pos = line.find(s1, pos + s2.length());
 		}
-		output << line << std::endl;
+		output << line;
+		if (!input.eof()) {
+			output << std::endl;
+		}
 	}
 
 	input.close();
