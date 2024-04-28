@@ -30,7 +30,6 @@ public:
 
     void setRawBits(int const raw);
 
-
     int toInt() const;
 
     float toFloat() const;
