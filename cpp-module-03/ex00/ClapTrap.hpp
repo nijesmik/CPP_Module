@@ -27,11 +27,14 @@ public:
 
     void attack(std::string const &target);
 
-    void attack(ClapTrap &target);
-
     void takeDamage(unsigned int amount);
 
     void beRepaired(unsigned int amount);
+
+//    std::string getName() const;
+//
+//    void realAttack(ClapTrap &target);
+
 };
 
 #endif //CPP_MODULE_CLAPTRAP_HPP

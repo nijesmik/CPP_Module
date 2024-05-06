@@ -5,11 +5,19 @@
 #include "ClapTrap.hpp"
 
 int main() {
-    ClapTrap clapTrap1;
-    ClapTrap clapTrap2("clapTrap2");
-    ClapTrap clapTrap3(clapTrap2);
+    ClapTrap trap1("trap1");
+    ClapTrap trap2("trap2");
 
-    clapTrap3.attack(clapTrap2);
-    clapTrap2.attack(clapTrap2);
+//    trap1.realAttack(trap2);
+
+    trap2.takeDamage(100);
+//    trap1.realAttack(trap2);
+
+    for (int i = 0; i < 10; i++) {
+        trap1.beRepaired(1);
+    }
+
+//    trap1.realAttack(trap2);
+
     return 0;
 }
