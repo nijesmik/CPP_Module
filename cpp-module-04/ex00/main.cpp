@@ -10,9 +10,6 @@ int main() {
     const Animal *animal = new Animal();
     const Animal *dog = new Dog();
     const Animal *cat = new Cat();
-    const WrongAnimal *wrongAnimal = new WrongAnimal();
-    const WrongCat *wrongCat = new WrongCat();
-    const WrongAnimal *wrongCat2 = wrongCat;
     std::cout << std::endl;
 
     animal->makeSound();
@@ -20,14 +17,21 @@ int main() {
     cat->makeSound();
     std::cout << std::endl;
 
+    delete animal;
+    delete dog;
+    delete cat;
+    std::cout << std::endl;
+
+    const WrongAnimal *wrongAnimal = new WrongAnimal();
+    const WrongCat *wrongCat = new WrongCat();
+    const WrongAnimal *wrongCat2 = wrongCat;
+    std::cout << std::endl;
+
     wrongAnimal->makeSound();
     wrongCat->makeSound();
     wrongCat2->makeSound();
     std::cout << std::endl;
 
-    delete animal;
-    delete dog;
-    delete cat;
     delete wrongAnimal;
     delete wrongCat;
 
