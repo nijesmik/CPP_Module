@@ -8,13 +8,13 @@ int main() {
     try {
         Bureaucrat bureaucrat = Bureaucrat("bureaucrat", 0);
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     try {
         Bureaucrat bureaucrat = Bureaucrat("bureaucrat", 151);
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     Bureaucrat bureaucrat1("대표이사", 1);
@@ -22,7 +22,7 @@ int main() {
     try {
         bureaucrat1.increaseGrade();
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     Bureaucrat bureaucrat2("신입사원", 150);
@@ -30,7 +30,7 @@ int main() {
     try {
         bureaucrat2.decreaseGrade();
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;

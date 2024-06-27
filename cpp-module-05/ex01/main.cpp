@@ -8,13 +8,13 @@ int main() {
     try {
         Form form("사업 양도 계약서", 0, 1);
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     try {
         Form form("사업 양도 계약서", 1, 151);
     } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     Form form("사업 양도 계약서", 1, 1);
