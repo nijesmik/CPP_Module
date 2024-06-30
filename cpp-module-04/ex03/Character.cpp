@@ -86,6 +86,7 @@ void Character::equip(AMateria *m) {
         }
     }
     std::cout << "Inventory is full!" << std::endl;
+    deleteMateria(m);
 }
 
 bool Character::isIndexValid(int idx) const {
