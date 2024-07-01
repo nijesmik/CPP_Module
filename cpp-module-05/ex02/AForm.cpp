@@ -21,15 +21,23 @@ AForm::AForm(const AForm &form) : name(form.name), isSigned(form.isSigned), sign
 
 AForm &AForm::operator=(const AForm &form) {
     if (this != &form) {
-        this->name = form.name;
+        const_cast<std::string &>(this->name) = form.name;
         this->isSigned = form.isSigned;
-        this->signGrade = form.signGrade;
-        this->executeGrade = form.executeGrade;
+        const_cast<int &>(this->signGrade) = form.signGrade;
+        const_cast<int &>(this->executeGrade) = form.executeGrade;
     }
     return *this;
 }
 
 AForm::~AForm() {}
+
+void AForm::setName(std::string name) {
+    const_cast<std::string &>(this->name) = name;
+}
+
+void AForm::setIsSigned(bool isSigned) {
+    this->isSigned = isSigned;
+}
 
 std::string AForm::getName() const {
     return this->name;

@@ -16,7 +16,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubb
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &shrubberyCreationForm) {
     if (this != &shrubberyCreationForm) {
-        AForm::operator=(shrubberyCreationForm);
+        setName(shrubberyCreationForm.getName());
+        setIsSigned(shrubberyCreationForm.getIsSigned());
     }
     return *this;
 }

@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.name), gr
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bureaucrat) {
     if (this != &bureaucrat) {
-        this->name = bureaucrat.name;
+        const_cast<std::string &>(this->name) = bureaucrat.name;
         this->grade = bureaucrat.grade;
     }
     return *this;

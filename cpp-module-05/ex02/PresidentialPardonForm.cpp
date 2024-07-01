@@ -17,7 +17,8 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &pre
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &presidentialPardonForm) {
     if (this != &presidentialPardonForm) {
-        AForm::operator=(presidentialPardonForm);
+        setName(presidentialPardonForm.getName());
+        setIsSigned(presidentialPardonForm.getIsSigned());
     }
     return *this;
 }

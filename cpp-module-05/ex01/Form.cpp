@@ -7,7 +7,8 @@
 
 Form::Form() : name("default"), isSigned(false), signGrade(150), executeGrade(150) {}
 
-Form::Form(std::string name, int signGrade, int executeGrade) : name(name), isSigned(false), signGrade(signGrade), executeGrade(executeGrade) {
+Form::Form(std::string name, int signGrade, int executeGrade) : name(name), isSigned(false), signGrade(signGrade),
+                                                                executeGrade(executeGrade) {
     if (signGrade < 1 || executeGrade < 1) {
         throw Form::GradeTooHighException();
     } else if (signGrade > 150 || executeGrade > 150) {
@@ -15,14 +16,15 @@ Form::Form(std::string name, int signGrade, int executeGrade) : name(name), isSi
     }
 }
 
-Form::Form(const Form &form) : name(form.name), isSigned(form.isSigned), signGrade(form.signGrade), executeGrade(form.executeGrade) {}
+Form::Form(const Form &form) : name(form.name), isSigned(form.isSigned), signGrade(form.signGrade),
+                               executeGrade(form.executeGrade) {}
 
 Form &Form::operator=(const Form &form) {
     if (this != &form) {
-        this->name = form.name;
+        const_cast<std::string &>(this->name) = form.name;
         this->isSigned = form.isSigned;
-        this->signGrade = form.signGrade;
-        this->executeGrade = form.executeGrade;
+        const_cast<int &>(this->signGrade) = form.signGrade;
+        const_cast<int &>(this->executeGrade) = form.executeGrade;
     }
     return *this;
 }

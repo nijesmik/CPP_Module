@@ -16,7 +16,8 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomyRequ
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &robotomyRequestForm) {
     if (this != &robotomyRequestForm) {
-        AForm::operator=(robotomyRequestForm);
+        setName(robotomyRequestForm.getName());
+        setIsSigned(robotomyRequestForm.getIsSigned());
     }
     return *this;
 }
