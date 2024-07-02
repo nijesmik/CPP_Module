@@ -5,6 +5,8 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
+bool RobotomyRequestForm::isSrandSeeded = false;
+
 RobotomyRequestForm::RobotomyRequestForm()
         : AForm("RobotomyRequestForm", ROBOTOMY_REQUEST_FORM_SIGN_GRADE, ROBOTOMY_REQUEST_FORM_EXECUTE_GRADE) {}
 
@@ -33,6 +35,10 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
     }
 
     std::cout << "🔊 Drilling noise..." << std::endl;
+    if (!isSrandSeeded) {
+        std::srand(std::time(0));
+        isSrandSeeded = true;
+    }
     if (std::rand() % 2) {
         std::cout << "🤖 " << this->getName() << " has been robotomized successfully" << std::endl;
     } else {

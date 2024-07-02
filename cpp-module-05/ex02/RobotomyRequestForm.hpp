@@ -6,11 +6,16 @@
 #define CPP_MODULE_ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 #define ROBOTOMY_REQUEST_FORM_SIGN_GRADE 72
 #define ROBOTOMY_REQUEST_FORM_EXECUTE_GRADE 45
 
 class RobotomyRequestForm : public AForm {
+private:
+    static bool isSrandSeeded;
+
 public:
     RobotomyRequestForm();
     RobotomyRequestForm(std::string formName);
