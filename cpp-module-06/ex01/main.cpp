@@ -14,7 +14,7 @@ Data newData(int date, std::string text) {
 }
 
 int main() {
-    Data data1 = newData(20240624, "Hello, World!");
+    Data data1 = newData(20240706, "Hello, World!");
 
     uintptr_t serializedData = Serializer::serialize(&data1);
     Data *data2 = Serializer::deserialize(serializedData);
@@ -27,6 +27,8 @@ int main() {
     std::cout << "serialized data(hex): " << ss.str() << std::endl;
 
     std::cout << "address of data2: " << data2 << std::endl;
+    std::cout << "data2->date: " << data2->date << std::endl;
+    std::cout << "data2->text: " << data2->text << std::endl;
 
     return 0;
 }
