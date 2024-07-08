@@ -7,3 +7,14 @@
 - 서로 관련 없는 포인터 타입 간의 변환 (예: 포인터를 정수로 변환하거나 그 반대)
 - 객체의 주소를 `void` 포인터로 변환하거나 `void` 포인터를 다른 포인터 타입으로 변환하는 경우
 - 비트 단위로 메모리 블록을 해석해야 할 때 (예: 네트워크 패킷 처리)
+
+# `dynamic_cast`
+
+`dynamic_cast`는 런타임에 타입을 확인하고, 타입이 맞으면 다운캐스팅(downcasting)을 수행하고,
+타입이 틀리면 `nullptr`를 반환하거나 예외(std::bad_cast)를 발생시킨다.
+
+```c++
+dynamic_cast<Derived *>(base_ptr); // nullptr if failed
+// or
+dynamic_cast<Derived &>(base_ref); // std::bad_cast if failed
+```
